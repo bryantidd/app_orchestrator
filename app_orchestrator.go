@@ -29,7 +29,7 @@ type Configuration struct {
 				ServiceCheckHttp		string
 				ServiceCheckInterval	uint64
 			}
-			Environment		[]string
+			Environment		[]map[string]string
 			Volumes			[]string
 			Restart			string
 			Port			string
@@ -62,7 +62,7 @@ func (app *APP) handleError(err error, status int) int {
 
 func (app *APP) Run(args []string) int {
 
-    file, _ := os.Open("client.json")
+    file, _ := os.Open(args[1])
 	decoder := json.NewDecoder(file)
 	configuration := Configuration{}
 	err := decoder.Decode(&configuration)
