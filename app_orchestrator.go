@@ -1,4 +1,4 @@
-package app_orchestrator
+package main
 
 import (
     "encoding/json"

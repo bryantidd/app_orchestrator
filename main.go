@@ -1,4 +1,4 @@
-package app_orchestrator
+package main
 
 import (
 	"os"
@@ -11,6 +11,6 @@ const Name = "app_orchestrator"
 const Version = "0.0.1.bnt"
 
 func main() {
-	app_orchestrator := NewApp(os.Stdout, os.Stderr)
-	os.Exit(app_orchestrator.Run(os.Args))
+	app := NewApp(os.Stdout, os.Stderr)
+	os.Exit(app.Run(os.Args))
 }
